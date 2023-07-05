@@ -1,38 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: cadetblue;
+}
+
 .App {
-  text-align: center;
+    max-width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App header {
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    background-color: aliceblue;
+    width: 100%;
+    box-shadow: 0 3px 10px rgb(0 0 0/0.2);
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #000;
+    margin: 0 0 .5rem 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header p {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #1a1a11;
 }
 
-.App-link {
-  color: #61dafb;
+
+.App header  a{
+    align-self: flex-end;
+    text-decoration: none;
+    padding: .2rem;
+    font-size: .9rem;
+    font-weight: 400;
+    color: cadetblue;
+    border: 1px solid cadetblue;
+    border-radius: 2.6px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.App .main-section {
+    margin: 16rem auto 0;
+    padding: 1rem;
+}
+
+.main-section .input-wrapper {
+    position: relative;
+}
+
+.input-wrapper label {
+    background: aliceblue;
+    color: #1a1a11;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.input-wrapper input[type="file"] {
+    position: absolute;
+    left: 26px;
+    top: 6px;
+    font-size: 15px;
+    color: #1a1a11;
+    z-index: -1;
+}
+
+.result {
+    margin-top: 4rem;
+    display: grid;
+    justify-content: center;
+}
+
+.result .selectedImage-container {
+    background: #1a1a11;
+    height: 100%;
+    padding: 1rem;
+    margin: .5rem;
+}
+
+.selectedImage-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.result .btn-ocrResult-container{
+    margin: .5rem;
+}
+.result .btn-ocrResult-container button{
+    background: aliceblue;
+    color: #1a1a11;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 1rem;
+}
+.result .btn-ocrResult-container p {
+    background: #fff;
+    height: 100%;
+    padding: 1rem;
+    margin-top: .2rem;
+}
+
+@media (min-width: 1000px) {
+    .result {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
