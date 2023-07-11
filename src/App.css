@@ -28,21 +28,21 @@ body {
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
     color: #000;
     margin: 0 0 .5rem 0;
 }
 
 header p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 400;
     font-style: italic;
     color: #1a1a11;
 }
 
 
-.App header  a{
+/* .App header  a{
     align-self: flex-end;
     text-decoration: none;
     padding: .2rem;
@@ -51,11 +51,18 @@ header p {
     color: cadetblue;
     border: 1px solid cadetblue;
     border-radius: 2.6px;
+} */
+
+.App .errorMess-section{
+    margin: 16rem 0 0 0;
+    text-align: center;
+    color: aliceblue;
+    text-decoration: underline;
+    font-size: 1.8rem;
 }
 
-
 .App .main-section {
-    margin: 16rem auto 0;
+    /* margin: 16rem auto 0; */
     padding: 1rem;
 }
 
@@ -117,8 +124,20 @@ header p {
     padding: 1rem;
     margin-top: .2rem;
 }
+/* footer{
+    position: fixed;
+    bottom: 0;
+} */
 
 @media (min-width: 1000px) {
+    header h1 {
+        font-size: 3rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+        
+    } 
     .result {
         grid-template-columns: repeat(2, 1fr);
     }

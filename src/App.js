@@ -7,6 +7,8 @@ const App = () => {
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [ocrResult, setOCRResult] = useState("");
+  const [errorMess, setErrorMess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
 
   const handleImageUpload = (event) => {
@@ -16,16 +18,31 @@ const App = () => {
 
 
   const performOCR = async () => {
+
+    setIsLoading(true);
+    
     if (!selectedImage) {
-      alert("Please upload an image first.");
+      setErrorMess(true);
+      setIsLoading(false);
       return;
     }
+    else{
+      setErrorMess(false);
+    }
+    
     try {
+      
       const { data } = await Tesseract.recognize(selectedImage, "eng");
       setOCRResult(data.text);
     } catch (error) {
       console.error("OCR error:", error);
     }
+
+    // Simulating an asynchronous operation
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
   };
 
 
@@ -38,10 +55,10 @@ const App = () => {
           <p>Get words in image!</p>
         </div>
 
-         <a href="https://">About_Us</a>
+         {/* <a href="https://">About_Us</a> */}
         
       </header>
-
+      <div className="errorMess-section">{errorMess && (<div>Please upload an image first!</div>)}</div>
       <div className="main-section">
 
         <div className="input-wrapper">
@@ -63,12 +80,18 @@ const App = () => {
           )}
 
           <div className="btn-ocrResult-container">
-            <button onClick={performOCR}>Perform OCR</button>
+            <button onClick={performOCR}>
+            {isLoading ? 'Processing...' : 'Perform OCR'}
+              </button>
 
             {ocrResult && (
               <div className="ocrResult-container">
                 OCR Result:
-                <p>{ocrResult}</p>
+                <p>{ocrResult} </p>
+              <div>
+                powered by Tesseract
+                {/* &copy; 2023 Ogechi Juliet Uhegbu */}
+                </div>
               </div>
             )}
           </div>
