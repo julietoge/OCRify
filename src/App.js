@@ -1,10 +1,22 @@
 import React, { useState } from "react";
 import Tesseract from "tesseract.js";
 import "./App.css";
+import { saveAs } from 'file-saver';
+
+
+const languages = [
+  { label: 'English', value: 'eng' },
+  { label: 'Hausa', value: 'hau' },
+  { label: 'Igbo', value: 'ibo' },
+  { label: 'Yoruba', value: 'yor' },
+];
+
+
+
 
 const App = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedLanguage, setSelectedLanguage] = useState('eng');
+  const [selectedLanguage, setSelectedLanguage] = useState(languages[0].value);
   const [ocrResult, setOCRResult] = useState("");
   const [errorMess, setErrorMess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -12,14 +24,6 @@ const App = () => {
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     setSelectedImage(URL.createObjectURL(file));
-
-  //   const reader = new FileReader();
-    
-  //   reader.onload = (e) => {
-  //     setSelectedImage(e.target.result);
-  //   };
-    
-  //   reader.readAsDataURL(file);
   };
 
 
@@ -53,8 +57,13 @@ const App = () => {
       setIsLoading(false);
     }, 10);
     }
-
     
+  };
+// application/msword
+  // text/plain;charset=utf-8
+  const downloadAsDoc = () => {
+    const blob = new Blob([ocrResult], { type: 'application/msword' });
+    saveAs(blob, 'recognized_text.doc');
   };
 
   return (
@@ -83,12 +92,12 @@ const App = () => {
 
         <div>
         <label htmlFor="language-select">Select Language:</label>
-        <select id="language-select" value={selectedLanguage} onChange={handleLanguageChange}>
-          <option value="eng">English</option>
-          <option value="hausa">Hausa</option>
-          <option value="igbo">Igbo</option>
-          <option value="yor">Yoruba</option>
-        </select>
+        <select value={selectedLanguage} onChange={handleLanguageChange}>
+        {languages.map((language) => (
+          <option key={language.value} value={language.value}>{language.label}</option>
+        ))}
+      </select>
+
       </div>
 
 
@@ -112,6 +121,7 @@ const App = () => {
                 <div>
                   powered by Tesseract
                 </div>
+                <button onClick={downloadAsDoc}>Download</button>
               </div>
             )}
           </div>
