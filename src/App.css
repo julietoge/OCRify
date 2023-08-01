@@ -42,22 +42,11 @@ header p {
 }
 
 
-/* .App header  a{
-    align-self: flex-end;
-    text-decoration: none;
-    padding: .2rem;
-    font-size: .9rem;
-    font-weight: 400;
-    color: cadetblue;
-    border: 1px solid cadetblue;
-    border-radius: 2.6px;
-} */
 
 .App .errorMess-section{
     margin: 16rem 0 0 0;
     text-align: center;
-    color: aliceblue;
-    text-decoration: underline;
+    color: red;
     font-size: 1.8rem;
 }
 
