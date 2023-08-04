@@ -1,8 +1,7 @@
 const Languages = [
     { label: "English", value: "eng" },
-    { label: "Hausa", value: "Ajami" },
-    { label: "Igbo", value: "Nsibidi" },
-    { label: "Yoruba", value: "afr" },
+    { label: "Hausa", value: "afr" },
+    { label: "Igbo", value: "ibo" },
+    { label: "Yoruba", value: "yor" },
   ];
   export default Languages;
-  // Afro-Asiatic 
