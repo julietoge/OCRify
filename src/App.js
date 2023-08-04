@@ -1,69 +1,56 @@
 import React, { useState } from "react";
 import Tesseract from "tesseract.js";
 import "./App.css";
-import { saveAs } from 'file-saver';
-
-
-const languages = [
-  { label: 'English', value: 'eng' },
-  { label: 'Hausa', value: 'hau' },
-  { label: 'Igbo', value: 'ibo' },
-  { label: 'Yoruba', value: 'yor' },
-];
-
-
-
+import { saveAs } from "file-saver";
+import Languages from "./components/AuthLayouts/languages";
+// import ImageProcessing from 'react-image-processing';
 
 const App = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0].value);
+  const [selectedLanguage, setSelectedLanguage] = useState(Languages[0].value);
   const [ocrResult, setOCRResult] = useState("");
   const [errorMess, setErrorMess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0];
+  const handleLanguageChange = (e) => {
+    setSelectedLanguage(e.target.value);
+  };
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
     setSelectedImage(URL.createObjectURL(file));
+    setErrorMess(false);
   };
-
-
-
-  const handleLanguageChange = (event) => {
-    setSelectedLanguage(event.target.value);
-  };
-
 
   const performOCR = async () => {
-
     if (!selectedImage) {
       setErrorMess(true);
       setIsLoading(false);
       return;
-    } 
-    
-    else if(selectedImage) {
+    } else if (selectedImage) {
       setErrorMess(false);
       setIsLoading(true);
 
       try {
-        const { data: { text }  } = await Tesseract.recognize(selectedImage, selectedLanguage);
+        const {
+          data: { text },
+        } = await Tesseract.recognize(selectedImage, selectedLanguage);
         setOCRResult(text);
       } catch (error) {
         console.error("OCR error:", error);
       }
 
       // Simulating an asynchronous operation
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 10);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 10);
     }
-    
   };
-// application/msword
+  // application/msword
   // text/plain;charset=utf-8
   const downloadAsDoc = () => {
-    const blob = new Blob([ocrResult], { type: 'application/msword' });
-    saveAs(blob, 'recognized_text.doc');
+    const blob = new Blob([ocrResult], { type: "application/msword" });
+    saveAs(blob, "recognized_text.doc");
   };
 
   return (
@@ -73,12 +60,24 @@ const App = () => {
           <h1>SwiftLexi OCR</h1>
           <p>Get words in image!</p>
         </div>
-
       </header>
+     
+
+      <div className="main-section">
       <div className="errorMess-section">
         {errorMess && <div>Please upload an image first!</div>}
       </div>
-      <div className="main-section">
+      
+      <div>
+        <label htmlFor="language-select">Select Language:</label>
+        <select value={selectedLanguage} onChange={handleLanguageChange}>
+          {Languages.map((Language) => (
+            <option key={Language.value} value={Language.value}>
+              {Language.label}
+            </option>
+          ))}
+        </select>
+      </div>
         <div className="input-wrapper">
           <label htmlFor="Upload">Upload Image</label>
           <input
@@ -89,26 +88,13 @@ const App = () => {
           />
         </div>
 
-
-        <div>
-        <label htmlFor="language-select">Select Language:</label>
-        <select value={selectedLanguage} onChange={handleLanguageChange}>
-        {languages.map((language) => (
-          <option key={language.value} value={language.value}>{language.label}</option>
-        ))}
-      </select>
-
-      </div>
-
-
-
         <div className="result">
           {selectedImage && (
             <div className="selectedImage-container">
               <img src={selectedImage} alt="Selected" />
             </div>
           )}
-
+          
           <div className="btn-ocrResult-container">
             <button onClick={performOCR}>
               {isLoading ? "Processing..." : "Perform OCR"}
@@ -118,9 +104,7 @@ const App = () => {
               <div className="ocrResult-container">
                 OCR Result:
                 <p>{ocrResult} </p>
-                <div>
-                  powered by Tesseract
-                </div>
+                <div>powered by Tesseract</div>
                 <button onClick={downloadAsDoc}>Download</button>
               </div>
             )}
