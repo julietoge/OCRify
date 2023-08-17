@@ -1,16 +1,23 @@
 import React from "react";
-import "./landingpage.css"
+import "./landingPage.css"
 import { Link } from "react-router-dom";
+import Logo from "../../components/Logo/Logo";
 
 const Landingpage = () => {
   return (
     <div>
-      <header>
-        <div className="logo">SwiftLexi</div>
+       <div>
+          <Logo />
+          <p>Get words in image!</p>
+        </div>
+      <div>
+        
+        <button>
         <Link to="/ocr">
-          <button>Get Started</button>
+          Get Started
         </Link>
-      </header>
+        </button>
+      </div>
       <div className="Features-wrapper">
         <div>
           <h2> Features</h2>

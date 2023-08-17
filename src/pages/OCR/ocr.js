@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Tesseract from "tesseract.js";
 import "./ocr.css";
 import { saveAs } from "file-saver";
-import Languages from "./components/AuthLayouts/languages";
+import Languages from "../../components/languages/languages";
+import Logo from "../../components/Logo/Logo";
 // import ImageProcessing from 'react-image-processing';
 
 const Ocr = () => {
@@ -36,6 +37,7 @@ const Ocr = () => {
           data: { text },
         } = await Tesseract.recognize(selectedImage, selectedLanguage);
         setOCRResult(text);
+        console.log(text)
       } catch (error) {
         console.error("OCR error:", error);
       }
@@ -46,8 +48,6 @@ const Ocr = () => {
       }, 10);
     }
   };
-  // application/msword
-  // text/plain;charset=utf-8
   const downloadAsDoc = () => {
     const blob = new Blob([ocrResult], { type: "application/msword" });
     saveAs(blob, "recognized_text.doc");
@@ -57,7 +57,7 @@ const Ocr = () => {
     <div className="App">
       <header>
         <div>
-          <h1>SwiftLexi OCR</h1>
+          <Logo />
           <p>Get words in image!</p>
         </div>
       </header>

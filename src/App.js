@@ -1,14 +1,15 @@
-import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import Ocr from './ocr';
-// import Landingpage from './landingpage';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Landingpage from "./pages/Landing-Page/landingPage";
+import Ocr from './pages/OCR/ocr';
 
 const App = () => {
   return (
-    <BrowserRouter>
-    <Ocr />
-  </BrowserRouter>
-  )
-}
+      <Routes>
+        <Route path="/" element={<Landingpage />}></Route>
+        <Route path='/ocr' element={<Ocr/>}></Route>
+      </Routes>
+  );
+};
 
 export default App;
