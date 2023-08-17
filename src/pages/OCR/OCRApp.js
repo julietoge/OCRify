@@ -48,7 +48,7 @@ const Ocr = () => {
     }
   };
   const downloadAsDoc = () => {
-    const blob = new Blob([ocrResult], { type: "application/msword" });
+    const blob = new Blob([ocrResult], { type: "application/Microsoft Word (docx)" });
     saveAs(blob, "recognized_text.doc");
   };
 
