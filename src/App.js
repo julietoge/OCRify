@@ -7,7 +7,7 @@ const App = () => {
   return (
       <Routes>
         <Route path="/" element={<Landingpage />}></Route>
-        <Route path='/ocr' element={<OCRApp/>}></Route>
+        <Route path='/OCRApp' element={<OCRApp/>}></Route>
       </Routes>
   );
 };

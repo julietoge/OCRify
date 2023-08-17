@@ -13,7 +13,7 @@ const Landingpage = () => {
       <div>
         
         <button>
-        <Link to="/ocr">
+        <Link to="/OCRApp">
           Get Started
         </Link>
         </button>
