@@ -5,7 +5,7 @@ import { saveAs } from "file-saver";
 import Languages from "../../components/languages/languages";
 import Logo from "../../components/Logo/Logo";
 
-const Ocr = () => {
+const OCRApp = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedLanguage, setSelectedLanguage] = useState(Languages[0].value);
   const [ocrResult, setOCRResult] = useState("");
@@ -34,7 +34,7 @@ const Ocr = () => {
       try {
         const {
           data: { text },
-        } = await Tesseract.recognize(selectedImage, selectedLanguage);
+        } = await Tesseract.recognize(selectedImage, selectedLanguage,);
         setOCRResult(text);
         console.log(text)
       } catch (error) {
@@ -112,4 +112,4 @@ const Ocr = () => {
   );
 };
 
-export default Ocr;
+export default OCRApp;

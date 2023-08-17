@@ -17,9 +17,15 @@ const Landingpage = () => {
           Get Started
         </Link>
         </button>
+        <button>
+        <Link to="/TestApp">
+          Get Start
+        </Link>
+        </button>
       </div>
       <div className="Features-wrapper">
         <div>
+        {/* https://www.newocr.com/ */}
           <h2> Features</h2>
           Free online OCR service offers unlimited file uploads and does not
           require registration. Your data is kept safe and secure with us, and

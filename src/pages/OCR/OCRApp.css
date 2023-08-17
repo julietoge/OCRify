@@ -4,13 +4,10 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: cadetblue;
-}
-
 .App {
     max-width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: cadetblue;
 }
 
 .App header {
