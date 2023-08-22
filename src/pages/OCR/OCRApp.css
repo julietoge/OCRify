@@ -4,10 +4,15 @@
     box-sizing: border-box;
 }
 
-.App {
+.OCRApp {
     max-width: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: cadetblue;
+    background: url('../../img/images.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #1a1a11;
 }
 
 .App header {
@@ -19,7 +24,6 @@
 header h1 {
     font-size: 2rem;
     font-weight: 500;
-    color: #000;
     margin: 0 0 .5rem 0;
 }
 
@@ -27,7 +31,6 @@ header p {
     font-size: 0.8rem;
     font-weight: 400;
     font-style: italic;
-    color: #1a1a11;
 }
 
 
@@ -49,8 +52,8 @@ header p {
 }
 
 .input-wrapper label {
-    background: aliceblue;
-    color: #1a1a11;
+    background: #1a1a11;
+    color: #fff;
     padding: 8px 12px;
     cursor: pointer;
     border-radius: 4px;
@@ -88,8 +91,8 @@ header p {
     margin: .5rem;
 }
 .result .btn-ocrResult-container button{
-    background: aliceblue;
-    color: #1a1a11;
+    background: #1a1a11;
+    color: #fff;
     padding: 8px 12px;
     cursor: pointer;
     border-radius: 4px;
