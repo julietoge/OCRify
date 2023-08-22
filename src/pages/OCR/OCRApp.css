@@ -1,125 +1,86 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .OCRApp {
-    max-width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    background: url('../../img/images.jpg');
+  max-width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background: url('../../img/images.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    color: #1a1a11;
+    height: 100vh; */
+  color: #1a1a11;
 }
 
-.App header {
-    background-color: aliceblue;
-    width: 100%;
-    box-shadow: 0 3px 10px rgb(0 0 0/0.2);
-}
-
-header h1 {
-    font-size: 2rem;
-    font-weight: 500;
-    margin: 0 0 .5rem 0;
-}
-
-header p {
-    font-size: 0.8rem;
-    font-weight: 400;
-    font-style: italic;
-}
-
-
-
-.App .errorMess-section{
-    margin: 6rem 0 0 0;
-    text-align: center;
-    color: red;
-    font-size: 1.8rem;
-}
-
-.App .main-section {
-    /* margin: 16rem auto 0; */
-    padding: 1rem;
+.OCRApp .errorMess-section {
+  color: red;
 }
 
 .main-section .input-wrapper {
-    position: relative;
+  position: relative;
 }
 
 .input-wrapper label {
-    background: #1a1a11;
-    color: #fff;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 4px;
-    display: inline-block;
+  background: #1a1a11;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
 }
 
 .input-wrapper input[type="file"] {
-    position: absolute;
-    left: 26px;
-    top: 6px;
-    font-size: 15px;
-    color: #1a1a11;
-    z-index: -1;
+  position: absolute;
+  left: 26px;
+  top: 6px;
+  font-size: 15px;
+  color: #1a1a11;
+  z-index: -1;
 }
 
 .result {
-    margin-top: 4rem;
-    display: grid;
-    justify-content: center;
+  margin-top: 4rem;
+  display: grid;
+  justify-content: center;
 }
 
 .result .selectedImage-container {
-    background: #1a1a11;
-    height: 100%;
-    padding: 1rem;
-    margin: .5rem;
+  background: #1a1a11;
+  height: 100%;
+  border: 2px solid #1a1a11;
 }
 
 .selectedImage-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-.result .btn-ocrResult-container{
-    margin: .5rem;
+.result .btn-ocrResult-container {
+  margin: 0.5rem;
 }
-.result .btn-ocrResult-container button{
-    background: #1a1a11;
-    color: #fff;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 4px;
-    border: none;
-    margin-bottom: 1rem;
+.result .btn-ocrResult-container button {
+  background: #1a1a11;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 1rem;
 }
 .result .btn-ocrResult-container p {
-    background: #fff;
-    height: 100%;
-    padding: 1rem;
-    margin-top: .2rem;
+  color: #1a1a11;
+  background: #fff;
+  border: 2px solid #1a1a11;
+  height: 100%;
+  padding: 1rem;
+  margin-top: 0.2rem;
 }
-/* footer{
-    position: fixed;
-    bottom: 0;
-} */
 
 @media (min-width: 1000px) {
-    header h1 {
-        font-size: 3rem;
-    }
-    
-    header p {
-        font-size: 1rem;
-        
-    } 
-    .result {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .result {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

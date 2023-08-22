@@ -4,10 +4,10 @@
     background-color: #FFFFFF;
 }
 .landingPageApp{
-    background: url('../../img/images.jpg');
+    /* background: url('../../img/images.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 100vh; */
     color: #1a1a11;
 }
