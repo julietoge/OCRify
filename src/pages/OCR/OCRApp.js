@@ -4,6 +4,7 @@ import "./OCRApp.css";
 import { saveAs } from "file-saver";
 import Logo from "../../components/Logo/Logo";
 import Languages from "../../components/languages/languages";
+// import { Image } from 'image-js';
 
 
 const Ocr = () => {

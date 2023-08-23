@@ -11,11 +11,15 @@ const Landingpage = () => {
         <p>Get words in image!</p>
       </div>
       <div>
-        <button>
+      <button>
           <Link to="/OCRApp">Get Started</Link>
+        </button>
+        <button>
+          <Link to="/OCR">Get Started OCR</Link>
         </button>
       </div>
       <div className="Features-wrapper">
+        <img src="../../img/text-file.avif" alt="" />
         <div>
           {/* https://www.newocr.com/ */}
           <h2> Features</h2>
