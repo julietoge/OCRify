@@ -1,3 +1,27 @@
+# Colours
+/* Keppel
+#38BB9C
+
+Tiara
+#CBD7D8
+
+Bright Gray
+#3C3F54
+
+Faded Jade
+#3C746C */
+       /* Surf
+       #B9DAC6
+       
+       Matisse
+       #1E588F
+       
+       Scorpion
+       #6B6567
+       
+       Sirocco
+       #7A7C7C */
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

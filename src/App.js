@@ -1,12 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Landingpage from "./pages/Landing-Page/landingPage";
+import LandingPage from "./pages/Landing-Page/LandingPage";
 import OCR from './pages/OCR/OCRApp';
+import "./App.css"
 
 const App = () => {
   return (
-      <Routes>
-        <Route path="/" element={<Landingpage />}></Route>
+      <Routes class="App">
+        <Route path="/" element={<LandingPage />}></Route>
         <Route path='/OCRApp' element={<OCR/>}></Route>
       </Routes>
   );

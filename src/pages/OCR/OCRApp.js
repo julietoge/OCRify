@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Tesseract from "tesseract.js";
 import { saveAs } from "file-saver";
 // import "./OCRApp.css";
-import Logo from "../../components/Logo/Logo";
+import AuthLayout from "../../components/AuthLayout/AuthLayout";
 import Languages from "../../components/languages/languages";
 
 const OCR = () => {
@@ -101,12 +101,8 @@ const OCR = () => {
   };
 
   return (
+    <AuthLayout>
     <div className="OCRApp">
-      <div className="logo">
-        <Logo />
-        <p>Get words in image!</p>
-      </div>
-
       <div className="errorMess-section">
         {errorMess && <div>Please upload an image first!</div>}
       </div>
@@ -149,6 +145,7 @@ const OCR = () => {
         )}
       </div>
     </div>
+    </AuthLayout>
   );
 };
 
