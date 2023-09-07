@@ -24,7 +24,13 @@ const AuthLayout = ({ children }) => {
               format.
             </p>
           </div>
+          <div>
+            <h4>Information</h4>
 
+            <div>Terms & Conditions</div>
+
+            <div>Privacy Policy</div>
+          </div>
           <div>
             <h4>Follow Us</h4>
             <div>twitter</div>
