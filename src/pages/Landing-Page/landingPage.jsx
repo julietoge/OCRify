@@ -3,7 +3,7 @@ import "./LandingPage.css";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
-import Image from "../../img/images (3).png";
+import Image from "../../img/image-3.png"
 
 const LandingPage = () => {
   return (
@@ -11,7 +11,7 @@ const LandingPage = () => {
       <div className="landingPageApp">
         <div className="jumbotron">
           <div className="Title">
-            <h1>Free online OCR</h1>
+            <h1>Get text image</h1>
             <p>
               Unlock the power of OCRify, the cutting-edge OCR web app that
               seamlessly extracts characters from both English and Igbo scripts.
