@@ -3,7 +3,7 @@ import "./LandingPage.css";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
-import Image from "../../img/image-3.png"
+import Image from "../../img/image-3.png";
 
 const LandingPage = () => {
   return (
@@ -11,12 +11,11 @@ const LandingPage = () => {
       <div className="landingPageApp">
         <div className="jumbotron">
           <div className="Title">
-            <h1>Get text image</h1>
+            <h1>Extract Characters with Precision</h1>
             <p>
-              Unlock the power of OCRify, the cutting-edge OCR web app that
-              seamlessly extracts characters from both English and Igbo scripts.
-              Say goodbye to manual data entry and hello to effortless
-              digitization!
+              Welcome to the OCRify! Say goodbye to manual transcription and
+              hello to effortless character extraction from text-containing
+              image documents.
             </p>
             <div className="btn-wrapper">
               <button>
@@ -32,14 +31,37 @@ const LandingPage = () => {
         <div className="Features-wrapper">
           <h2>Our Key Features</h2>
           <div className="Features-content">
+          <div className="features-items languages">
+              <h3>OCRify</h3>
+              OCRify is an AI-based system that converts image into text with great accuracy using 
+              A.I techniques.
+            </div>
             <div className="features-items languages">
-              <h3> Recognition languages</h3>
-              English and Igbo
+              <h3>core recognition</h3>
+              OCRify's core recognition program is powered by two of the best machine learning libraries Tesseract and Scikit-learn.
+            </div>
+
+           
+            <div className="features-items languages">
+              <h3>No Daily Limit</h3>
+              Convert unlimited pictures into text with no daily limit.
+            </div>
+            <div className="features-items languages">
+              <h3> Any Type of pic</h3>
+              <p>OCRify can get character from all kinds of image formats such as
+                JPEG, JFIF, PNG, etc., low-resolution photos, or even math expressions.</p>
+              
+            </div>
+
+            <div className="features-items languages">
+              <h3>Copy / Download</h3>
+              Download  word file or copy text from the image with just one
+              click.
             </div>
             <div className="features-items AccuracySpeed">
               <h3>Accuracy and Speed</h3>
               <p>
-                Our advanced algorithms ensure high accuracy and lightning-fast
+                Our advanced preprocressing techniques ensure high accuracy and lightning-fast
                 character extraction.
               </p>
             </div>
@@ -48,27 +70,6 @@ const LandingPage = () => {
               <p>
                 OCRify's intuitive interface makes it easy for anyone to convert
                 printed or handwritten text into digital form.
-              </p>
-            </div>
-            <div className="features-items Access">
-              <h3>Access Anywhere</h3>
-              <p>
-                Use OCRify from your browser on any device – no downloads or
-                installations required.
-              </p>
-            </div>
-            <div className="features-items Input">
-              <h3> Input file formats</h3>
-              <p>
-                OCRify is able to process all kinds of image formats such as
-                JPEG, JFIF, PNG, GIF, BMP, PBM, PGM, PPM, PCX, etc.
-              </p>
-            </div>
-            <div className="features-items Output">
-              <h3> Output file formats</h3>
-              <p>
-                OCRify provides plain text (TXT) or Microsoft Word (DOC) output
-                file formats.
               </p>
             </div>
 
@@ -87,32 +88,24 @@ const LandingPage = () => {
             <ul>
               <li>Hit the "Get started" button</li>
               <li>
-                Upload Your Image: Select an image containing English or Igbo
-                text.
+                Upload Your Image: Select an image document that contains the text you want to extract.
               </li>
               <li>
-                Choose the Language: Indicate whether the text is in English or
-                Igbo.
+              Hit the "OCRify" button, and watch as OCRify works its magic to extract the text.
               </li>
               <li>
-                Start OCR Process: Hit the "OCRify" button, and watch an
-                advanced algorithms and with the help of our preprocessing
-                techniques work their magic by processing the image and extract
-                the characters.
-              </li>
-              <li>
-                Download Your Text: Once processed, your digitized text will be
-                ready for download.
+                Download Your Text: Once the process is complete, your digitized text is ready for download.
               </li>
             </ul>
             <p>
-              OCRify is the solution you've been waiting for to streamline your
-              document management or efficient character extraction. Whether
-              you're a student, professional, or language enthusiast, OCRify is
-              here to make your life easier. And it's capable to handle poorly
-              scanned and photographed pages and low-resolution images with the
-              help of our preprocessing techniques.
+              OCRify is your go-to solution for digitizing text from image
+              documents. Whether you're dealing with scanned files, handwritten
+              notes, or any text in images, OCRify is here to simplify the
+              process.
+              Unlock the power of OCRify and make text extraction from image
+              documents a seamless experience!
             </p>
+
             <p>
               <Link to="/OCRApp">Get started</Link> today and experience the
               future of OCR technology with OCRify!

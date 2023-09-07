@@ -12,8 +12,8 @@
   color: #38bb9c;
   font-weight: 600;
   font-size: 34px;
-  letter-spacing: 0.5rem;
-  word-spacing: 1rem;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.5rem;
 }
 .jumbotron .Title p {
   color: #3c3f54;
@@ -23,7 +23,7 @@
   word-spacing: 0.1rem;
 }
 .jumbotron .img-wrapper img {
-  width: 749px;
+  max-width: 749px;
   height: 409px;
 }
 .jumbotron .btn-wrapper {

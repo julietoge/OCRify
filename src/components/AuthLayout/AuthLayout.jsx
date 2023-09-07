@@ -16,25 +16,23 @@ const AuthLayout = ({ children }) => {
         </div>
 
         <div className="Footer">
-          <p>
+          <div>
             <h4>About</h4>
-             OCR.best is AI-Based Optical Character Recognition (OCR)
-            software which extract text from images and convert into .txt or
-            docs format.
-          </p>
+            <p>
+              OCR.best is AI-Based Optical Character Recognition (OCR) software
+              which extract text from images and convert into .txt or docs
+              format.
+            </p>
+          </div>
 
-          <p>
-            <h4>Information</h4>
-             Terms & Conditions Privacy Policy</p>
-
-          <p> 
-            <h4>Contact Us</h4>
-             Get in touch support@ocr.best</p>
-
-          <p>
+          <div>
             <h4>Follow Us</h4>
-             twitter facebood linkedin pinterest</p>
-          <p>Copyright © All rights reserved By OCR.best</p>
+            <div>twitter</div>
+            <div>GitHub</div>
+            <div>linkedin</div>
+            <div>instagram</div>
+          </div>
+          <div>Copyright © All rights reserved By OCRify</div>
         </div>
       </div>
     </div>
