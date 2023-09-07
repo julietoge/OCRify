@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import LandingPage from "./pages/Landing-Page/LandingPage";
+import LandingPage from "./pages/Landing-Page/landingPage";
 import OCR from './pages/OCR/OCRApp';
 import "./App.css"
 
