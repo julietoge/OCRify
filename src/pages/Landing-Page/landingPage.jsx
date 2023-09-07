@@ -1,7 +1,7 @@
 import React from "react";
 import "./LandingPage.css";
 import { Link } from "react-router-dom";
-import "./LandingPage.css";
+import "./landingPage.css";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
 import Image from "../../img/image-3.png";
 
