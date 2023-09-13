@@ -18,8 +18,7 @@ const LandingPage = () => {
             </p>
             <div className="btn-wrapper">
               <button>
-                {/* <Link to="/OCRApp">Get Started</Link> */}
-                <Link to="/OCR">Get Started</Link>
+                <Link to="/OCRApp">Get Started</Link>
               </button>
             </div>
           </div>
@@ -38,7 +37,7 @@ const LandingPage = () => {
               using A.I techniques.
             </div>
             <div className="features-items languages">
-              <h3>core recognition</h3>
+              <h3>Core Recognition</h3>
               OCRify's core recognition program is powered by one of the best
               machine learning library Tesseract.
             </div>
@@ -99,7 +98,7 @@ const LandingPage = () => {
               </li>
               <li>
                 Download Your Text: Once the process is complete, your digitized
-                text is ready for download as word file or copy as text 
+                text is ready for download as word file or copy as text
               </li>
             </ul>
             <p>

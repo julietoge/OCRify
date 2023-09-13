@@ -11,10 +11,10 @@
   width: 100%;
   border-bottom: 8px solid #38bb9c;
 }
-.jumbotron .Title{
-width: 50%;
+.jumbotron .Title {
+  width: 50%;
 }
-.jumbotron .img-wrapper{
+.jumbotron .img-wrapper {
   width: 50%;
 }
 .jumbotron .Title h1 {
@@ -34,8 +34,6 @@ width: 50%;
 .jumbotron .img-wrapper img {
   width: 100%;
   height: 369px;
-  /* width: 676px;
-  height: 369px;*/
 }
 .jumbotron .btn-wrapper {
   margin: 4px 0;
@@ -50,7 +48,7 @@ width: 50%;
   text-decoration: none;
   color: #fff;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 0rem;
   word-spacing: 0.1rem;
 }
@@ -71,7 +69,7 @@ width: 50%;
   text-align: center;
   color: #38bb9c;
   font-weight: 600;
-  font-size: 38px;
+  font-size: 34px;
   letter-spacing: 0.1rem;
   word-spacing: 0.5rem;
   margin: 0 0 2rem;
@@ -83,33 +81,37 @@ width: 50%;
   max-width: 282px;
   padding: 12px;
   color: #3c3f54;
-  box-shadow: 6px 4px 4px #B9DAC6;
+  box-shadow: 6px 4px 4px #b9dac6;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0rem;
   word-spacing: 0.1rem;
-  line-height: 2rem;
+  line-height: 1.6rem;
 }
+.features-items:hover {
+  transform: scale(1.1);
+  transition: 1s;
+  z-index: 8;
+}
+
 .features-items h3 {
   color: #38bb9c;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 24px;
   letter-spacing: 0.1rem;
-  word-spacing: 0.5rem;
-  line-height: 1rem;
+  word-spacing: 0rem;
   text-align: center;
+  margin-bottom: 8px;
 }
 .HowItWorks-wrapper {
   margin: 4.8rem 0 0;
-  /* border-top: 8px solid #38bb9c; */
 }
 .HowItWorks-wrapper h2 {
   color: #38bb9c;
   font-weight: 600;
-  font-size: 38px;
+  font-size: 34px;
   letter-spacing: 0.1rem;
   word-spacing: 0.5rem;
-  font-style: normal;
 }
 .HowItWorks-wrapper .HowItWorks-content {
   color: #3c3f54;
@@ -117,24 +119,14 @@ width: 50%;
   font-size: 20px;
   letter-spacing: 0rem;
   word-spacing: 0.1rem;
-  line-height: 2rem;
+  line-height: 1.8rem;
 }
 .HowItWorks-wrapper .HowItWorks-content ul {
   padding: 0 0 0 22px;
 }
-.HowItWorks-wrapper .HowItWorks-content a{
-    color: #38bb9c;
+.HowItWorks-wrapper .HowItWorks-content a {
+  color: #38bb9c;
 }
-.HowItWorks-wrapper .HowItWorks-content a:hover{
-    color:  #1E588F;
+.HowItWorks-wrapper .HowItWorks-content a:hover {
+  color: #1e588f;
 }
-/* @media (max-width: 984PX) {
-  .jumbotron {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    align-items: center;
-    height: auto;
-    border-bottom: 8px solid #38bb9c;
-  }
-} */

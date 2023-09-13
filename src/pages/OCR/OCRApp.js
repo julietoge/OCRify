@@ -3,25 +3,17 @@ import Tesseract from "tesseract.js";
 import { saveAs } from "file-saver";
 // import "./OCRApp.css";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
-import Languages from "../../components/languages/languages";
 
-const OCR = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedLanguage, setSelectedLanguage] = useState(Languages[0].value);
-  const [ocrResult, setOCRResult] = useState("");
-  const [errorMess, setErrorMess] = useState(false);
-  const [processing, setProcessing] = useState(false);
+const OCRApp = () => {
+  const [image, setImage] = useState(null);
+  const [text, setText] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setSelectedImage(URL.createObjectURL(file));
-      setErrorMess(false);
+      setImage(URL.createObjectURL(file));
     }
-  };
-
-  const handleLanguageChange = (e) => {
-    setSelectedLanguage(e.target.value);
   };
 
   const preprocessImage = async (imageData) => {
@@ -66,87 +58,54 @@ const OCR = () => {
   };
 
   const handleProcessClick = async () => {
-    if (!selectedImage) {
-      setErrorMess(true);
-      setProcessing(false);
-      return;
-    }
+    if (!image) return;
 
-    setErrorMess(false);
-    setProcessing(true);
+    setIsProcessing(true);
 
     try {
-      const preprocessedImage = await preprocessImage(selectedImage);
+      const preprocessedImage = await preprocessImage(image);
 
       const {
         data: { text },
-      } = await Tesseract.recognize(preprocessedImage, selectedLanguage);
+      } = await Tesseract.recognize(preprocessedImage, "eng");
       console.log(text);
-      setOCRResult(text);
+      setText(text);
     } catch (error) {
-      console.error("OCR error:", error);
+      console.error("Error performing OCR:", error);
     }
 
-    // Simulating an asynchronous operation
-    setTimeout(() => {
-      setProcessing(false);
-    }, 10);
+    setIsProcessing(false);
   };
 
   const handleDownloadClick = () => {
-    if (ocrResult) {
-      const blob = new Blob([ocrResult], { type: "application/msword" });
-      saveAs(blob, "recognized_text.doc");
-    }
+    if (!text) return;
+    const blob = new Blob([text], { type: "application/msword" });
+    saveAs(blob, "recognized_text.doc");
   };
 
   return (
-    <AuthLayout>
-    <div className="OCRApp">
-      <div className="errorMess-section">
-        {errorMess && <div>Please upload an image first!</div>}
-      </div>
-
-      <div>
-        <label htmlFor="language-select">Select Language:</label>
-        <select value={selectedLanguage} onChange={handleLanguageChange}>
-          {Languages.map((Language) => (
-            <option key={Language.value} value={Language.value}>
-              {Language.label}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="input-wrapper">
-        <input
-          type="file"
-          id="Upload"
-          accept="image/*"
-          onChange={handleImageUpload}
-        />
-
-        {selectedImage && <img src={selectedImage} alt="Selected" />}
-      </div>
-      <div>
-        <button onClick={handleProcessClick}>
-          {processing ? "Processing..." : "Process"}
-        </button>
-        <button onClick={handleDownloadClick} disabled={!ocrResult}>
-          Download
-        </button>
-      </div>
-      <div className="result">
-        {ocrResult && (
-          <div className="ocrResult-container">
-            OCR Result:
-            <p>{ocrResult} </p>
-          </div>
-        )}
-      </div>
-    </div>
+    <AuthLayout className="OCRApp">
+      <input
+        type="file"
+        id="Upload"
+        accept="image/*"
+        onChange={handleImageUpload}
+      />
+      {image && <img src={image} alt="Selected" />}
+      <button onClick={handleProcessClick} disabled={!image}>
+        {isProcessing ? "Processing..." : "Process"}
+      </button>
+      <button onClick={handleDownloadClick} disabled={!text}>
+        Download
+      </button>
+      {text && (
+        <div className="ocrResult-container">
+          <h2>OCR Result:</h2>
+          <p>{text} </p>
+        </div>
+      )}
     </AuthLayout>
   );
 };
 
-export default OCR;
+export default OCRApp;
