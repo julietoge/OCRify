@@ -25,8 +25,8 @@ const OCRApp = () => {
     await img.decode();
 
     // Resize the image
-    canvas.width = 800;
-    canvas.height = (800 / img.width) * img.height;
+    canvas.width = 2500;
+    canvas.height = (2500 / img.width) * img.height;
 
     // Apply grayscale effect
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
