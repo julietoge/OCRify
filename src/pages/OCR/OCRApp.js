@@ -55,6 +55,10 @@ const OCRApp = () => {
 
     ctx.putImageData(imageDataGrey, 0, 0);
     return canvas.toDataURL("image/jpeg", 0.8);
+     // blurARGB(image.data, canvas, 1);
+    // dilate(image.data, canvas);
+    // invertColors(image.data);
+    // thresholdFilter(image.data, 0.4);
   };
 
   const handleProcessClick = async () => {
