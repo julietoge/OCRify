@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Tesseract from 'tesseract.js';
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
+import { saveAs } from 'file-saver';
 
 function OCR() {
   const [image, setImage] = useState(null);
@@ -27,13 +28,24 @@ function OCR() {
     setIsProcessing(false);
   };
 
+
+  const downloadAsWord = () => {
+    if (!text) return;
+
+    const blob = new Blob([text], { type: 'application/msword' });
+    saveAs(blob, 'ocr_result.doc');
+  };
+
   return (
     <AuthLayout className="OCR">
-     <h1>OCR Application</h1>
+       <h1>OCR Application</h1>
       <input type="file" accept="image/*" onChange={handleImageChange} />
       {image && <img src={image} alt="Selected" width="300" />}
       <button onClick={performOCR} disabled={isProcessing}>
         {isProcessing ? 'Processing...' : 'Process'}
+      </button>
+      <button onClick={downloadAsWord} disabled={!text}>
+        Download as Word
       </button>
       {text && (
         <div>
