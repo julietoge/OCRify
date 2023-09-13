@@ -5,6 +5,7 @@
 }
 .AuthLayout-wrapper {
   max-width: 100%;
+  background: #fff;
 }
 .AuthLayout {
   width: 100%;
@@ -12,9 +13,6 @@
 .heaader-childern {
   width: 90%;
   margin: 0 auto;
-}
-.Header {
-  /* text-align: right; */
 }
 
 .logo a {
@@ -26,5 +24,25 @@
   font-family: Blackadder ITC;
 }
 .children {
-  margin: 4rem 0 2rem;
+  margin: 0 0 3rem;
+}
+.Footer-wrapper{
+  border-top: 8px solid #38bb9c;
+  background: #B9DAC6;
+  color: #3C3F54;
+}
+.Footer-wrapper .Footer{
+  width: 90%;
+  margin: 0 auto;
+}
+.Footer-wrapper .Footer-items{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.Footer-wrapper .Footer-item{
+  max-width: 482px;
+}
+.Copyright{
+  text-align: center;
 }

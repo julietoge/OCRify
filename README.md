@@ -1,15 +1,20 @@
 # Colours
 
 ## Keppel
-
 #38BB9C
 
 ## Bright Gray
-
 #3C3F54
 
-## Matisse
+## Surf
+#B9DAC6
 
+## #fff
+
+
+
+
+Matisse
 #1E588F
 
 Tiara
@@ -18,14 +23,11 @@ Tiara
 Faded Jade
 #3C746C
 
-Surf
-#B9DAC6
-
 Scorpion
-       #6B6567
+#6B6567
 
-       Sirocco
-       #7A7C7C
+Sirocco
+#7A7C7C
        
 # Getting Started with Create React App
 
