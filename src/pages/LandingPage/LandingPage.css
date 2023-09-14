@@ -62,7 +62,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  row-gap: 32px;
+  row-gap: 38px;
   column-gap: 18px;
 }
 .Features-wrapper h2 {
