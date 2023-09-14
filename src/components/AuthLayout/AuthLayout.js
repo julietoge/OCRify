@@ -42,7 +42,7 @@ const AuthLayout = ({ children }) => {
               </div>
             </div>
             <div className="Copyright">
-              Copyright © All rights reserved By OCRify
+              Copyright &copy; All rights reserved By OCRify
             </div>
           </div>
         </div>
