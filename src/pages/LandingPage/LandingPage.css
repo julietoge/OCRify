@@ -63,8 +63,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 32px;
-  /* row-gap: 42px;
-  column-gap: 18px; */
+  column-gap: 18px;
 }
 .Features-wrapper h2 {
   text-align: center;
@@ -131,7 +130,7 @@
 .HowItWorks-wrapper .HowItWorks-content a:hover {
   color: #1e588f;
 }
-@media (max-width:565px) {
+@media (max-width:698px) {
   .jumbotron {
     flex-direction: column-reverse;
     align-items: center;
@@ -167,7 +166,9 @@
 .Features-wrapper, .HowItWorks-wrapper {
   margin: 3rem 0 0;
 }
-
+.Features-wrapper .Features-content {
+  justify-content: center;
+}
 .features-items h3 {
   font-size: 20px;
 }
