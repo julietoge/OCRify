@@ -89,15 +89,15 @@ const LandingPage = () => {
             <ul>
               <li>Hit the "Get started" button</li>
               <li>
-                Upload Your Image: Select an image document that contains the
+                Choose File: Select an image document that contains the
                 Characters you want to extract.
               </li>
               <li>
-                Hit the "OCRify" button, and watch as OCRify works its magic to
+                Hit the "Process" button, and watch as OCRify works its magic to
                 extract the Characters.
               </li>
               <li>
-                Download Your Text: Once the process is complete, your digitized
+                Download: Once the process is complete, your digitized
                 text is ready for download as word file or copy as text
               </li>
             </ul>
