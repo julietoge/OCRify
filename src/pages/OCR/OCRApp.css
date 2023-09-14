@@ -3,13 +3,8 @@
   margin: 0;
   box-sizing: border-box;
 }
-.OCRApp {
+/* .OCRApp {
   max-width: 100%;
-  /* background: url('../../img/images.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh; */
   color: #1a1a11;
 }
 
@@ -81,4 +76,4 @@
   .result {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+} */

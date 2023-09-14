@@ -3,7 +3,7 @@ import Tesseract from "tesseract.js";
 import { saveAs } from "file-saver";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
 import preprocessImage from "../../components/preprocess";
-// import "./OCRApp.css";
+import "./OCRApp.css";
 
 const OCRApp = () => {
   const [image, setImage] = useState(null);
