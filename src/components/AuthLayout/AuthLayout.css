@@ -35,15 +35,28 @@
 .Footer-wrapper .Footer {
   width: 90%;
   margin: 0 auto;
+  padding: 1rem 0;
+  font-size: 14px;
 }
 .Footer-wrapper .Footer-items {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  row-gap: 2rem;
 }
 .Footer-wrapper .Footer-item {
   max-width: 482px;
 }
 .Copyright {
   text-align: center;
+  margin-top: 1rem;
+ 
+}
+@media (max-width:565px) {
+  .logo a {
+    font-size: 38px;
+  }
+  .children {
+    margin: 3rem 0 3rem;
+  }
 }

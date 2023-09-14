@@ -44,26 +44,37 @@ const OCRApp = () => {
   };
 
   return (
-    <AuthLayout className="OCRApp">
-      <input
-        type="file"
-        id="Upload"
-        accept="image/*"
-        onChange={handleImageUpload}
-      />
-      {image && <img src={image} alt="Selected" />}
-      <button onClick={handleProcessClick} disabled={!image}>
-        {isProcessing ? "Processing..." : "Process"}
-      </button>
-      <button onClick={handleDownloadClick} disabled={!text}>
-        Download
-      </button>
-      {text && (
-        <div className="ocrResult-container">
-          <h2>OCR Result:</h2>
-          <p>{text} </p>
+    <AuthLayout>
+      <div className="OCRApp">
+        <div className="input-wrapper">
+          <input
+            type="file"
+            id="Upload"
+            accept="image/*"
+            onChange={handleImageUpload}
+          />
         </div>
-      )}
+        <div className="image-wrapper">
+          {image && <img src={image} alt="Selected" />}
+        </div>
+        <div className="button-ocrResult">
+          <button onClick={handleProcessClick} disabled={!image}>
+            {isProcessing ? "Processing..." : "Process"}
+          </button>
+
+          <div className="ocrResult-container">
+            {text && (
+              <div className="Result">
+                <h2>Result:</h2>
+                <p>{text} </p>
+                <button onClick={handleDownloadClick} disabled={!text}>
+                  Download
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </AuthLayout>
   );
 };
