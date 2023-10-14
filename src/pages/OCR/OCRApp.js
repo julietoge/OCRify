@@ -28,8 +28,9 @@ const OCRApp = () => {
       const {
         data: { text },
       } = await Tesseract.recognize(preprocessedImage, "eng");
-      console.log(text);
       setText(text);
+      console.log(text);
+
     } catch (error) {
       console.error("Error performing OCR:", error);
     }
@@ -37,6 +38,7 @@ const OCRApp = () => {
     setIsProcessing(false);
   };
 
+  
   const handleDownloadClick = () => {
     if (!text) return;
     const blob = new Blob([text], { type: "application/msword" });
