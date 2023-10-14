@@ -34,7 +34,11 @@ const preprocessImage = async (imageData) => {
   }
 
   // Noise Removal (Median Filtering): Apply a median filter to remove noise
-  const filteredImageData = medianFilter(imageDataGrey, canvas.width, canvas.height);
+  const filteredImageData = medianFilter(
+    imageDataGrey,
+    canvas.width,
+    canvas.height
+  );
 
   // Put the filtered data back on the canvas
   ctx.putImageData(filteredImageData, 0, 0);
