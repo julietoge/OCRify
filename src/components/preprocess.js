@@ -1,3 +1,46 @@
+// Helper function to apply median filtering to an image
+function medianFilter(imageData, width, height) {
+  const outputImageData = new ImageData(width, height);
+  const radius = 1; // Adjust the radius based on the amount of noise you want to remove
+
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const r = [];
+      const g = [];
+      const b = [];
+
+      // Gather pixel values within the specified radius
+      for (let dy = -radius; dy <= radius; dy++) {
+        for (let dx = -radius; dx <= radius; dx++) {
+          const nx = x + dx;
+          const ny = y + dy;
+
+          if (nx >= 0 && ny >= 0 && nx < width && ny < height) {
+            const index = (ny * width + nx) * 4;
+            r.push(imageData.data[index]);
+            g.push(imageData.data[index + 1]);
+            b.push(imageData.data[index + 2]);
+          }
+        }
+      }
+
+      // Sort the gathered values and select the median value
+      r.sort();
+      g.sort();
+      b.sort();
+
+      const index = (y * width + x) * 4;
+      outputImageData.data[index] = r[Math.floor(r.length / 2)];
+      outputImageData.data[index + 1] = g[Math.floor(g.length / 2)];
+      outputImageData.data[index + 2] = b[Math.floor(b.length / 2)];
+      outputImageData.data[index + 3] = imageData.data[index + 3]; // Alpha channel
+    }
+  }
+
+  return outputImageData;
+}
+
+// function to apply preprocessImage to an image
 const preprocessImage = async (imageData) => {
   // Create a canvas element and obtain a 2D rendering context
   const canvas = document.createElement("canvas");
@@ -44,49 +87,7 @@ const preprocessImage = async (imageData) => {
   ctx.putImageData(filteredImageData, 0, 0);
 
   // Return the preprocessed image as a data URL in PNG format with 80% quality
-  return canvas.toDataURL("image/png", 0.8);
+  return canvas.toDataURL("image/png", 0.99);
 };
-
-// Helper function to apply median filtering to an image
-function medianFilter(imageData, width, height) {
-  const outputImageData = new ImageData(width, height);
-  const radius = 1; // Adjust the radius based on the amount of noise you want to remove
-
-  for (let y = 0; y < height; y++) {
-    for (let x = 0; x < width; x++) {
-      const r = [];
-      const g = [];
-      const b = [];
-
-      // Gather pixel values within the specified radius
-      for (let dy = -radius; dy <= radius; dy++) {
-        for (let dx = -radius; dx <= radius; dx++) {
-          const nx = x + dx;
-          const ny = y + dy;
-
-          if (nx >= 0 && ny >= 0 && nx < width && ny < height) {
-            const index = (ny * width + nx) * 4;
-            r.push(imageData.data[index]);
-            g.push(imageData.data[index + 1]);
-            b.push(imageData.data[index + 2]);
-          }
-        }
-      }
-
-      // Sort the gathered values and select the median value
-      r.sort();
-      g.sort();
-      b.sort();
-
-      const index = (y * width + x) * 4;
-      outputImageData.data[index] = r[Math.floor(r.length / 2)];
-      outputImageData.data[index + 1] = g[Math.floor(g.length / 2)];
-      outputImageData.data[index + 2] = b[Math.floor(b.length / 2)];
-      outputImageData.data[index + 3] = imageData.data[index + 3]; // Alpha channel
-    }
-  }
-
-  return outputImageData;
-}
 
 export default preprocessImage;
