@@ -50,9 +50,8 @@
 .Copyright {
   text-align: center;
   margin-top: 1rem;
- 
 }
-@media (max-width:565px) {
+@media (max-width: 565px) {
   .logo a {
     font-size: 38px;
   }
