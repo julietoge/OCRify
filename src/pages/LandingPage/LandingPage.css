@@ -57,7 +57,8 @@
 .jumbotron .btn-wrapper button a:hover {
   text-decoration: underline;
 }
-.Features-wrapper, .HowItWorks-wrapper {
+.Features-wrapper,
+.HowItWorks-wrapper {
   margin: 4.8rem 0 0;
 }
 .Features-wrapper .Features-content {
@@ -67,11 +68,12 @@
   row-gap: 38px;
   column-gap: 18px;
 }
-.Features-wrapper h2{
+.Features-wrapper h2 {
   text-align: center;
   margin: 0 0 2rem;
 }
-.Features-wrapper h2, .HowItWorks-wrapper h2 {
+.Features-wrapper h2,
+.HowItWorks-wrapper h2 {
   color: #38bb9c;
   font-weight: 600;
   font-size: 34px;

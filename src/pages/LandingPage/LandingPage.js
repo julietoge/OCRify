@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
-import Image from "../../img/image-3-removebg-preview.png";
+import Image from "../../img/imageBgRemove.png";
 import {
   FaUser,
   FaChartLine,
