@@ -8,10 +8,7 @@ import {
   FaChartLine,
   FaClock,
   FaImage,
-  FaDownload,
-  FaStar,
-  FaCodepen,
-  FaLock,
+  FaDownload, FaStar, FaCodepen, FaLock
 } from "react-icons/fa";
 
 const LandingPage = () => {
@@ -70,20 +67,26 @@ const LandingPage = () => {
               </p>
             </div>
             <div className="features-items AccuracySpeed">
+          
               <h3>Accuracy and Speed</h3>
               <FaStar className="FaStar" />
               <p>High accuracy and lightning-fast character extraction.</p>
             </div>
             <div className="features-items User-FriendlyInterface">
               <h3> Interface</h3>
-              <FaCodepen className="FaCodepen" />
-              <p>User-Friendly Interface by making easy to use by anyone.</p>
+               <FaCodepen className="FaCodepen" />
+              <p>
+              User-Friendly Interface by making easy to use by anyone.
+              </p>
             </div>
 
             <div className="features-items languages">
               <h3>Secure and Private</h3>
               <FaLock className="FaLock" />
-              <p>We prioritize your privacy and data security.</p>
+              <p>
+                We prioritize your privacy and data
+                security.
+              </p>
             </div>
           </div>
         </div>
