@@ -44,6 +44,19 @@
   border: none;
   background: #38bb9c;
 }
+.FaUser,
+.FaChartLine,
+.FaClock,
+.FaImage,
+.FaDownload,
+.FaStar,
+.FaCodepen,
+.FaLock {
+  width: 80px;
+  height: 80px;
+  color: #38bb9c;
+  text-align: center;
+}
 .jumbotron .btn-wrapper button a {
   text-decoration: none;
   color: #fff;
@@ -130,7 +143,7 @@
 .HowItWorks-wrapper .HowItWorks-content a:hover {
   color: #1e588f;
 }
-@media (max-width:698px) {
+@media (max-width: 698px) {
   .jumbotron {
     flex-direction: column-reverse;
     align-items: center;
@@ -142,12 +155,16 @@
   .jumbotron .Title {
     width: 100%;
   }
-  .jumbotron .Title h1, .Features-wrapper h2, .HowItWorks-wrapper h2  {
+  .jumbotron .Title h1,
+  .Features-wrapper h2,
+  .HowItWorks-wrapper h2 {
     font-size: 24px;
     letter-spacing: 0rem;
     word-spacing: 0rem;
   }
-  .jumbotron .Title p, .features-items, .HowItWorks-wrapper .HowItWorks-content {
+  .jumbotron .Title p,
+  .features-items,
+  .HowItWorks-wrapper .HowItWorks-content {
     font-size: 16px;
     word-spacing: 0rem;
   }
@@ -158,18 +175,19 @@
   .jumbotron .img-wrapper {
     width: 100%;
   }
-  
-.jumbotron .img-wrapper img {
-  width: 98%;
-  height: 224px;
-}
-.Features-wrapper, .HowItWorks-wrapper {
-  margin: 3rem 0 0;
-}
-.Features-wrapper .Features-content {
-  justify-content: center;
-}
-.features-items h3 {
-  font-size: 20px;
-}
+
+  .jumbotron .img-wrapper img {
+    width: 98%;
+    height: 224px;
+  }
+  .Features-wrapper,
+  .HowItWorks-wrapper {
+    margin: 3rem 0 0;
+  }
+  .Features-wrapper .Features-content {
+    justify-content: center;
+  }
+  .features-items h3 {
+    font-size: 20px;
+  }
 }

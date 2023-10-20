@@ -51,7 +51,7 @@ const preprocessImage = async (imageData) => {
   img.src = imageData;
   await img.decode();
 
-  // Image Scaling: Resize the image to a width of 2500 pixels while maintaining the aspect ratio
+  // Image Scaling: Resize the image to a width of 3000 pixels while maintaining the aspect ratio
   canvas.width = 3000;
   canvas.height = (canvas.width / img.width) * img.height;
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
