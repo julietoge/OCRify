@@ -24,6 +24,7 @@
   letter-spacing: 0.1rem;
   word-spacing: 0.5rem;
 }
+
 .jumbotron .Title p {
   color: #3c3f54;
   font-weight: 400;
@@ -44,19 +45,7 @@
   border: none;
   background: #38bb9c;
 }
-.FaUser,
-.FaChartLine,
-.FaClock,
-.FaImage,
-.FaDownload,
-.FaStar,
-.FaCodepen,
-.FaLock {
-  width: 80px;
-  height: 80px;
-  color: #38bb9c;
-  text-align: center;
-}
+
 .jumbotron .btn-wrapper button a {
   text-decoration: none;
   color: #fff;
@@ -68,7 +57,7 @@
 .jumbotron .btn-wrapper button a:hover {
   text-decoration: underline;
 }
-.Features-wrapper {
+.Features-wrapper, .HowItWorks-wrapper {
   margin: 4.8rem 0 0;
 }
 .Features-wrapper .Features-content {
@@ -78,14 +67,16 @@
   row-gap: 38px;
   column-gap: 18px;
 }
-.Features-wrapper h2 {
+.Features-wrapper h2{
   text-align: center;
+  margin: 0 0 2rem;
+}
+.Features-wrapper h2, .HowItWorks-wrapper h2 {
   color: #38bb9c;
   font-weight: 600;
   font-size: 34px;
   letter-spacing: 0.1rem;
   word-spacing: 0.5rem;
-  margin: 0 0 2rem;
   font-style: normal;
 }
 .features-items {
@@ -100,6 +91,10 @@
   letter-spacing: 0rem;
   word-spacing: 0.1rem;
   line-height: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 28px;
 }
 .features-items:hover {
   transform: scale(1.1);
@@ -116,20 +111,23 @@
   text-align: center;
   margin-bottom: 8px;
 }
-.HowItWorks-wrapper {
-  margin: 4.8rem 0 0;
-}
-.HowItWorks-wrapper h2 {
+.FaUser,
+.FaChartLine,
+.FaClock,
+.FaImage,
+.FaDownload,
+.FaStar,
+.FaCodepen,
+.FaLock {
+  width: 60px;
+  height: 60px;
   color: #38bb9c;
-  font-weight: 600;
-  font-size: 34px;
-  letter-spacing: 0.1rem;
-  word-spacing: 0.5rem;
 }
+
 .HowItWorks-wrapper .HowItWorks-content {
   color: #3c3f54;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0rem;
   word-spacing: 0.1rem;
   line-height: 1.8rem;
@@ -178,7 +176,7 @@
 
   .jumbotron .img-wrapper img {
     width: 98%;
-    height: 224px;
+    height: 144px;
   }
   .Features-wrapper,
   .HowItWorks-wrapper {
